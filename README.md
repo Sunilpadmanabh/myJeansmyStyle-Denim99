@@ -48,4 +48,14 @@ select * from users;
 select * from item;
 show tables;
 select * from product;
+#________________________later
+
+
+#made pass683215@gmail.com as the admin and enabled access as below (its through spring-security)--this adminRole can add the products
+update users set enabled='1' where userId='2';
+
+select * from authorities; 
+
+update authorities set authorities='ROLE_ADMIN' where authorityId='2';
+select * from authorities; 
 
