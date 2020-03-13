@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MyJeansMyStyle:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="MyJeansMyStyle.war">
+      <element id="artifact" artifact-name="registration:war exploded" />
+    </root>
+  </artifact>
+</component>

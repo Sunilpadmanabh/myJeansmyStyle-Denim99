@@ -1,0 +1,71 @@
+package com.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.model.Cart;
+import com.model.CartWithoutLogin;
+import com.model.Customer;
+import com.model.CustomerOrder;
+import com.model.CustomerOrderWithoutLogin;
+import com.model.CustomerWithoutLogin;
+import com.service.CartService;
+import com.service.CustomerOrderService;
+
+@Controller
+public class OrderController {
+
+	@Autowired
+	private CartService cartService;
+
+	@Autowired
+	private CustomerOrderService customerOrderService;
+
+	@RequestMapping("/order/{cartId}")
+	public String createOrder(@PathVariable("cartId") int cartId) {
+
+		CustomerOrder customerOrder = new CustomerOrder();
+
+		Cart cart = cartService.getCartByCartId(cartId);
+		// Update CartId for customerOrder - set CartId
+		customerOrder.setCart(cart);
+
+		Customer customer = cart.getCustomer();
+
+		customerOrder.setCustomer(customer);
+		// Set customerid
+		// Set ShippingAddressId
+		customerOrder.setShippingAddress(customer.getShippingAddress());
+
+		customerOrder.setBillingAddress(customer.getBillingAddress());
+
+		customerOrderService.addCustomerOrder(customerOrder);
+
+		return "redirect:/checkout?cartId=" + cartId;
+	}
+	
+	@RequestMapping("/orderWithoutLogin/{cartId}")
+	public String createOrderWithoutLogin(@PathVariable("cartId") String cartId) {
+
+		CustomerOrderWithoutLogin customerOrder = new CustomerOrderWithoutLogin();
+
+		CartWithoutLogin cartWithoutLogin = cartService.getCartWithoutLoginByCartId(cartId);
+		// Update CartId for customerOrder - set CartId
+		customerOrder.setCartWithoutLogin(cartWithoutLogin);
+
+		CustomerWithoutLogin customerWithoutLogin = cartWithoutLogin.getCustomerWithoutLogin();
+
+		customerOrder.setCustomerWithoutLogin(customerWithoutLogin);
+		// Set customerid
+		// Set ShippingAddressId
+		customerOrder.setShippingAddressWithoutLogin(customerWithoutLogin.getShippingAddressWithoutLogin());
+
+		customerOrder.setBillingAddressWithoutLogin(customerWithoutLogin.getBillingAddressWithoutLogin());
+
+		customerOrderService.addCustomerOrderWithoutLogin(customerOrder);
+
+		return "redirect:/checkout?cartId=" + cartId;
+	}
+}
