@@ -1,100 +1,51 @@
-# ShoppingCart [![HitCount](http://hits.dwyl.io/ikismail/ShoppingCart.svg)](http://hits.dwyl.io/ikismail/ShoppingCart)
+#its and spring and hibernate project using Maven
+# add the products(items) as given steps below.
 
-Developed an end to end **Ecommerce web Application using Spring MVC** with multiple
-modules
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('1','250','Men','Red and Maroon color shirt','trilok Manufacters','Fit Shirt','10','300','20');
 
-### Functionalities:
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('2','200','Men','your color shirt','vikas Manufacters','Fit Shirt','30','700','10');
 
-1. User Registeration
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('3','200','Men','Weart till tear color shirt','pola Manufacters','best Shirt','10','700','30');
 
-2. **CRUD Operations** like
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('4','250','Men','Great color shirt','siri Manufacters','polo Shirt','20','500','5');
 
-* User can add product to his cart
-* Admin can add product to the product list
-* Admin can edit the product details
-* Admin can delete the product from the list
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('5','440','Men',' color shirt','chaitra Manufacters','fz Shirt','20','500','30');
 
-3. **Spring Security**
-
-* User can login the site
-* The entire site will change according the role. Whether the client is User or Admin
-* user can logout after completing.
-
-4. **Spring WebFlow**
-
-* after adding products the cart the User can checkout using spring WebFlow
-* Confirming User Details
-* Confirming Shipping and Billing Address
-* Receipt
-* If the user cancel the webflow it will go to cancel Page
-* If the user submits the checkout it will go to thank you page with the timing of delivery Report
-
-### Tools and Technologies:
-
-* **Technology** : Bootstrap, Java, Spring MVC, Hibernate, JSP, Maven.
-* **Application Servicer**: Apache Tomcat Server
-* **Database** : H2 Database.
-
-### Installation:
-
-1. Development Platform - Eclipse / IntelliJ Idea
-   * [Download Eclipse](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/mars2)
-   * [Download IntelliJ Idea](https://www.jetbrains.com/idea/download/#section=windows)
-2. Server - Apache Tomcat Server
-
-   * [Download Apache Server](https://tomcat.apache.org/download-70.cgi)
-
-3. Build Tool - Maven
-
-   * [Download Maven](https://maven.apache.org/download.cgi)
-
-4. Database - H2 Database
-
-   * [Download H2 Database](http://www.h2database.com/html/download.html)
-
-5. Configuring tomcat with Eclipse (windows) - [Click Here](https://javatutorial.net/run-tomcat-from-eclipse)
-
-6. Installation of maven in eclipse - [Click Here](https://stackoverflow.com/questions/8620127/maven-in-eclipse-step-by-step-installation)
-
-7. Clone the repository and import it to eclipse
-
-8. Run your H2 Database.
-
-9. Configure your databse configuration in **application-context.xml**
-
-   * Database properties:
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('6','550','Men','good color shirt','varun Manufacters','bb Shirt','10','600','15');
 
 
-        <!-- database properties DataSource -->
 
-            <bean id="dataSource"
-              class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-              <property name="driverClassName" value=YOUR DB DRIVER CLASS NAME" />
-              <property name="url" value="YOUR DB URL" />
-              <property name="username" value="YOUR DB USERNAME" />
-              <property name="password" value="YOUR DB PASSWORD" />
-            </bean>
 
-      * Database Dialect:
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('7','550','Women','good color to[','varun Manufacters','bb girl top','10','600','15');
 
-            <prop key="hibernate.dialect">YOUR DB DIALECT</prop>
 
-10. Run the server.
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('8','200','Women','Weart till tear color tops','pola Manufacters','best top','10','700','30');
 
-### ScreenShots:
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('9','250','Women','Great color tops','siri Manufacters','polo top','20','500','5');
 
-* Home Page:
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('10','440','Women',' color tops','chaitra Manufacters','fz top','20','500','30');
 
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
 
-* Contact Us:
 
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ContactUs.png)
 
-#### Somethings wrong!!
 
-If you find that something's wrong with this package, you can let me know by raising an issue on the GitHub issue tracker
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('14','200','Kids','Weart till tear color for kids','pola Manufacters','best Kids','10','700','30');
 
-#### Contribution
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('15','250','Kids','Great color kid pant','siri Manufacters','polo kids pant','20','800','5');
 
-Contributors are most welcome.
+insert into item (Id,originalprice,category,description,manufacturer,name,offer,price,unit) values ('16','440','Kids',' color kid pants','chaitra Manufacters','fz kids','20','1000','30');
+
+
+
+
+show tables;
+  	
+commit;
+update users set enabled='1' where userId='1';
+show databases;
+use myjeans;
+select * from users;
+select * from item;
+show tables;
+select * from product;
+
