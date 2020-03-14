@@ -59,3 +59,20 @@ select * from authorities;
 update authorities set authorities='ROLE_ADMIN' where authorityId='2';
 select * from authorities; 
 
+#all tables list
+
+select * from authorities;
+select * from billingaddress;
+select * from cart;
+select * from cartitem;
+select * from cartitemwithoutlogin;
+select * from cartwithoutlogin;
+select * from customer;
+select * from customerorder;
+select * from customerorderwithoutlogin;
+select * from customerwithoutlogin;
+select * from item;
+select * from passwordresettoken;
+select * from query;
+select * from shippingaddress;
+select * from users;
